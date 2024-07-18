@@ -52,12 +52,12 @@ require __DIR__ . '/db-connect.php';
             </div>
             <label for="count" class="text-dark">用餐人數：</label>
     <select class="text-dark" id="count" name="count" required>
-        <option value="1">1人</option>
-        <option value="2">2人</option>
-        <option value="3">3人</option>
-        <option value="4">4人</option>
-        <option value="5">5人</option>
-        <option value="6">6人</option>
+        <option class="text-dark" value="1">1人</option>
+        <option class="text-dark" value="2">2人</option>
+        <option class="text-dark" value="3">3人</option>
+        <option class="text-dark" value="4">4人</option>
+        <option class="text-dark" value="5">5人</option>
+        <option class="text-dark" value="6">6人</option>
     </select>
             </div>
            
