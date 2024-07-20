@@ -144,7 +144,7 @@ if (empty($r)) {
       // FormData 的個體看成沒有外觀的表單
       const fd = new FormData(document.form1);
 
-      fetch('edit_reserve_api.php', {
+      fetch('reserve_edit_api.php', {
           method: 'POST',
           body: fd, // enctype: multipart/form-data
         }).then(r => r.json())

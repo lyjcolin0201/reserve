@@ -125,7 +125,7 @@ if ($totalRows) {
   <div class="container">
   <div class="row mt-5">
     <div class="mt-2">
-      <form action="list_reserve_admin.php" method="get">
+      <form action="reserve_list_admin.php" method="get">
         <label for="reserve_id" style="color:#ffffff;">預約編號:</label>
         <input class="text-dark" type="text" name="reserve_id" id="reserve_id" placeholder="請輸入編號" class="me-2" value="<?= htmlspecialchars($reserve_id) ?>">
         <label for="customer_name" style="color:#ffffff;">姓名:</label>
@@ -171,7 +171,7 @@ if ($totalRows) {
               <td><a href="javascript: deleteOne(<?= $r['reserve_id'] ?>)">
                   <i class="fa-solid fa-trash"></i>
                 </a></td>
-                <td><a href="edit_reserve.php?reserve_id=<?= $r['reserve_id'] ?>">
+                <td><a href="reserve_edit.php?reserve_id=<?= $r['reserve_id'] ?>">
                   <i class="fa-solid fa-pen-to-square"></i>
                 </a></td>
             </tr>
