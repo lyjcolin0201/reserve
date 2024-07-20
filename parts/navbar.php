@@ -184,7 +184,7 @@ if (!isset($pageName)) {
       <a class="nav_link <?= $pageName == 'ab_list' ? 'active' : '' ?>" href="index_.php"> <i class="fa-regular fa-rectangle-list"></i><span class="link-name" style="--i:6">列表頁</span></a>
     </li>
     <li class="list-item">
-      <a class="nav_link <?= $pageName == 'ab_add' ? 'active' : '' ?>" href="add_reserve.php"><i class="fa-solid fa-plus"></i><span class="link-name" style="--i:7">新增通訊錄</span></a>
+      <a class="nav_link <?= $pageName == 'ab_add' ? 'active' : '' ?>" href="reserve_add.php"><i class="fa-solid fa-plus"></i><span class="link-name" style="--i:7">新增通訊錄</span></a>
     </li>
   </ul>
 

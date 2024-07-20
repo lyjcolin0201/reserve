@@ -187,7 +187,7 @@ if ($totalRows) {
   const data = <?= json_encode($rows)  ?>;
   const deleteOne = (reserve_id) => {
     if (confirm(`是否要刪除編號為 ${reserve_id} 的資料??`)) {
-      location.href = `del_reserve.php?reserve_id=${reserve_id}`;
+      location.href = `reserve_del.php?reserve_id=${reserve_id}`;
     }
   };
   //searh

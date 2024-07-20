@@ -19,7 +19,7 @@ if (!isset($pageName)) {
             <a class="nav-link <?= $pageName == 'ab_list' ? 'active' : '' ?>" href="index_.php">列表</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $pageName == 'ab_add' ? 'active' : '' ?>" href="add_reserve.php">新增訂位人</a>
+            <a class="nav-link <?= $pageName == 'ab_add' ? 'active' : '' ?>" href="reserve_add.php">新增訂位人</a>
           </li>
 
 

@@ -129,7 +129,7 @@ require __DIR__ . '/db-connect.php';
       // FormData 的個體看成沒有外觀的表單
       const fd = new FormData(document.form1);
 
-      fetch('add_reserve_api.php', {
+      fetch('reserve_add_api.php', {
           method: 'POST',
           body: fd, // enctype: multipart/form-data
         }).then(r => r.json())
