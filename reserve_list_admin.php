@@ -83,7 +83,7 @@ if ($totalRows) {
 
 ?>
 <?php include __DIR__ . "./parts/html-head.php"; ?>
-<style>
+<!-- <style>
         .search-results {
             margin-top: 20px;
         }
@@ -101,26 +101,9 @@ if ($totalRows) {
             margin-top: 5px;
             margin-bottom: 5px;
         }
-    </style>
+    </style> -->
 <?php include __DIR__ . "/parts/navbar.php"; ?>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <?php for ($i = $page - 5; $i <= $page + 5; $i++) :
-            if ($i >= 1 && $i <= $totalPages) :
-          ?>
-              <li class="page-item <?= $i == $page ? 'active' : '' ?>">
-                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-              </li>
-          <?php
-            endif;
-          endfor; ?>
-        </ul>
-      </nav>
-    </div>
-  </div>
+
   <!-- search start -->
   <div class="container">
   <div class="row mt-5">
@@ -133,7 +116,9 @@ if ($totalRows) {
         <!-- <label for="name" style="color:#ffffff;">生日:</label>
         <input class="text-dark" type="date" name="date"> <span style="color:#ffffff;">~</span>
         <input class="text-dark" type="date" name="date"> -->
-        <button type="submit" class="btn btn-dark ms-2 p-1 px-3">查詢</button>
+        <button type="submit" class="btn btn-dark ms-2 p-1 px-3" style="margin-right:575px;">查詢</button>
+
+        <a href="reserve_add.php" scope="col" class="btn btn-dark" >新增訂位人</a>
       </form>
     </div>
   </div>
@@ -141,19 +126,22 @@ if ($totalRows) {
 
 
   <!-- search end -->
+  <div class="container">
   <div class="row">
-    <div class="col">
-      <table class="table table-bordered table-striped">
+    <div class="col rounded-3 mt-2 mb-3">
+      <table class="table table-striped table-hover" >
         <thead>
           <tr>
-          <th>reserve_id</th>
-            <th>customer_name</th>
-            <th>mobile</th>
-            <th>store</th>
-            <th>date</th>
-            <th>time</th>
-            <th>count</th>
+          <th>#</th>
+            <th>訂位人</th>
+            <th>連絡電話</th>
+            <th>分店</th>
+            <th>訂位日期</th>
+            <th>用餐時間</th>
+            <th>用餐人數</th>
             <th>created_at</th>
+            <th><i class="fa-solid fa-pen-to-square"></i></th>
+            <th><i class="fa-solid fa-trash-can"></i></th>
           </tr>
         </thead>
         <tbody>
@@ -168,12 +156,14 @@ if ($totalRows) {
               <td><?= $r['time'] ?></td>
               <td><?= $r['count'] ?></td>
               <td><?= $r['created_at'] ?></td>
-              <td><a href="javascript: deleteOne(<?= $r['reserve_id'] ?>)">
-                  <i class="fa-solid fa-trash"></i>
-                </a></td>
-                <td><a href="reserve_edit.php?reserve_id=<?= $r['reserve_id'] ?>">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </a></td>
+              <td>
+                <a style="color: #f4772f;" href="reserve_edit.php?reserve_id=<?= $r['reserve_id'] ?>"><i class="fa-solid fa-pen-to-square"></i>
+                </a>
+              </td>
+              <td><a style="color: #f4772f;" href="javascript: deleteOne(<?= $r['reserve_id'] ?>)">
+                  <i class="fa-solid fa-trash-can"></i>
+                </a>
+              </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
@@ -181,6 +171,24 @@ if ($totalRows) {
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="Page navigation example translate-middle">
+        <ul class="pagination">
+          <?php for ($i = $page - 5; $i <= $page + 5; $i++) :
+            if ($i >= 1 && $i <= $totalPages) :
+          ?>
+               <li class="page-item">
+                <a class="page-link <?= $i == $page ? 'text-dark bg-light' : 'text-light bg-dark' ?>" href="?page=<?= $i ?>"><?= $i ?></a>
+              </li>
+          <?php
+            endif;
+          endfor; ?>
+        </ul>
+      </nav>
+    </div>
+  </div>
 
 <?php include __DIR__ . "/parts/scripts.php"; ?>
 <script>
